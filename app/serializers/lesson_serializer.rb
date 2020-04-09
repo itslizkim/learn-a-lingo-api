@@ -1,3 +1,3 @@
 class LessonSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :language, :name, :img_url
 end

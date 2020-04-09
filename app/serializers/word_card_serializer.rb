@@ -1,3 +1,3 @@
 class WordCardSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :word, :game
 end

@@ -1,4 +1,10 @@
 class GamesController < ApplicationController
+
+    def index
+        games = Game.all
+        render json: games
+    end
+
     def create
         Game.create(game_params)
     end

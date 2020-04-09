@@ -1,3 +1,3 @@
 class FlashCardSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :word, :audio, :img_url, :lesson
 end

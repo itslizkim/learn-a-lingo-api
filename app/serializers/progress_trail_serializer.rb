@@ -1,3 +1,3 @@
 class ProgressTrailSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :user, :language
 end

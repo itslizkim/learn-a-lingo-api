@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :profile_characters
   resources :languages
   resources :img_cards
   resources :word_cards
