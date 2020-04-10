@@ -1,5 +1,11 @@
 class UsersController < ApplicationController
 
+
+    def index 
+        users = User.all
+        render json: users
+    end
+
     def show
         user = User.find(params[:id])
         render json: user
@@ -10,7 +16,6 @@ class UsersController < ApplicationController
         payload = {user_id: user.id}
         token = JWT.encode(payload, ENV["secret"], 'HS256')
         render json: {user:  user, token: token}
-        # render json: user
     end
 
     def update
@@ -21,13 +26,13 @@ class UsersController < ApplicationController
 
     def destroy
         user = User.find(params[:id])
-        user.destroy_all
+        user.destroy
         render json: { success: "Your account has been deleted"}
     end
 
 
     private 
     def user_params
-        params.permit(:username, :password)
+        params.permit(:email, :password, :name)
     end
 end
