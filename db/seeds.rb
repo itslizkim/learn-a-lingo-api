@@ -7,7 +7,7 @@ FlashCard.destroy_all
 WordCard.destroy_all
 ImgCard.destroy_all
 
-u1 = User.create(name: "Liz", email: "testing@email.com", password: "123")
+u1 = User.create(name: "Liz", email: "testing@email.com", profile_pic: "https://vignette.wikia.nocookie.net/animalcrossing/images/a/a5/Acnl-celeste.png/revision/latest?cb=20130703203412", password: "123")
 
 lang1 = Language.create(language: "English")
 lang2 = Language.create(language: "Korean")
@@ -19,6 +19,7 @@ l2 = Lesson.create(language_id: lang1.id, name: "Alphabet", img_url: "https://ww
 l3 = Lesson.create(language_id: lang1.id, name:"Animals", img_url: "https://i.pinimg.com/originals/b9/a6/30/b9a6305ff831529bea9bb15a4e393fa0.jpg")
 
 g1 = Game.create(lesson_id: l1.id)
+g2 = Game.create(lesson_id: l2.id)
 
 # fc: word, audio, img_url, lesson_id
 fruits = [
@@ -66,7 +67,7 @@ alphabet = [
 
 alphabet.each do |word|
     FlashCard.create(
-        lesson_id: l1.id,
+        lesson_id: l2.id,
         word: word[:word],
         audio: word[:audio],
         img_url: word[:img_url]
@@ -75,7 +76,7 @@ end
 
 alphabet.each do |word|
     WordCard.create(
-        game_id: g1.id,
+        game_id: g2.id,
         word: word[:word]
     )
 end

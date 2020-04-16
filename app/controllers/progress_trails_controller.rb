@@ -4,6 +4,10 @@ class ProgressTrailsController < ApplicationController
         render json: progress_trails
     end
 
+    def show
+        progress_trail = ProgressTrail.find_by(params[:user_id])
+    end
+
     def create
         progress_trail = ProgressTrail.create(progress_trail_params)
         render json: progress_trail

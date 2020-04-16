@@ -13,9 +13,14 @@ class UsersController < ApplicationController
     
     def create
         user = User.create(user_params)
-        payload = {user_id: user.id}
-        token = JWT.encode(payload, ENV["secret"], 'HS256')
-        render json: {user:  user, token: token}
+
+        if user.valid? 
+            payload = {user_id: user.id}
+            token = JWT.encode(payload, ENV["secret"], 'HS256')
+            render json: {user:  user, token: token}
+        else
+            render json: { errors: user.errors.full_messages }, status: 400
+        end
     end
 
     def update
@@ -33,6 +38,6 @@ class UsersController < ApplicationController
 
     private 
     def user_params
-        params.permit(:email, :password, :name)
+        params.permit(:email, :password, :name, :profile_pic)
     end
 end
