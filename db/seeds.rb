@@ -1,5 +1,5 @@
 User.destroy_all
-ProgressTrail.destroy_all
+Trail.destroy_all
 Language.destroy_all
 Lesson.destroy_all
 Game.destroy_all
@@ -12,7 +12,7 @@ u1 = User.create(name: "Liz", email: "testing@email.com", profile_pic: "https://
 lang1 = Language.create(language: "English")
 lang2 = Language.create(language: "Korean")
 
-pt1 = ProgressTrail.create(user_id: u1.id, language_id: lang1.id)
+t1 = Trail.create(user_id: u1.id, language_id: lang1.id)
 
 l1 = Lesson.create(language_id: lang1.id, name: "Fruits", img_url: "https://blog.bariatriceating.com/wp-content/uploads/2015/09/Dollarphotoclub_78097722-1024x693.jpg")
 l2 = Lesson.create(language_id: lang1.id, name: "Alphabet", img_url: "https://www.wowwallpaperhanging.com.au/wp-content/uploads/2013/04/Brewers_Wallapper_-_Cheek_Monkeys_-_Alphabet.png?x33484")
@@ -20,6 +20,7 @@ l3 = Lesson.create(language_id: lang1.id, name:"Animals", img_url: "https://i.pi
 
 g1 = Game.create(lesson_id: l1.id)
 g2 = Game.create(lesson_id: l2.id)
+g3 = Game.create(lesson_id: l3.id)
 
 # fc: word, audio, img_url, lesson_id
 fruits = [
@@ -29,6 +30,26 @@ fruits = [
     {word: "grape", audio: "https://media.merriam-webster.com/soundc11/g/grape001.wav", img_url: "https://royalfruitz.com/wp-content/uploads/2018/02/red-grape.jpg"},
     {word: "peach", audio: "https://media.merriam-webster.com/soundc11/p/peach001.wav", img_url: "https://www.titosvodka.com/uploads/Recipes/Garnishes/_auto1000/Titos-Vodka-Peach-Ingredient.jpg"},
     {word: "watermelon", audio: "https://media.merriam-webster.com/soundc11/w/waterm04.wav", img_url: "https://cdn.tridge.com/image/original/6f/82/1a/6f821a251e07a2abaf9bf0b7931cab024639dba3.jpg"}
+]
+
+alphabet = [
+    {word: "A" , audio: "https://media.merriam-webster.com/soundc11/a/a0000001.wav", img_url: "https://teachables.scholastic.com/content/dam/scholastic/teachables/products/23/9780439393423_011/9780439393423_011_xlg.jpg"},
+    {word: "B" , audio: "https://media.merriam-webster.com/soundc11/b/b0000001.wav", img_url: "https://teachables.scholastic.com/content/dam/scholastic/teachables/products/23/9780439393423_012/9780439393423_012_xlg.jpg"},
+    {word: "C" , audio: "https://media.merriam-webster.com/soundc11/c/c0000001.wav", img_url: "https://teachables.scholastic.com/content/dam/scholastic/teachables/products/23/9780439393423_013/9780439393423_013_xlg.jpg"},
+    {word: "D" , audio: "https://media.merriam-webster.com/soundc11/d/d0000001.wav", img_url: "https://teachables.scholastic.com/content/dam/scholastic/teachables/products/23/9780439393423_014/9780439393423_014_xlg.jpg"},
+    {word: "E" , audio: "https://media.merriam-webster.com/soundc11/e/e0000001.wav", img_url: "https://teachables.scholastic.com/content/dam/scholastic/teachables/products/23/9780439393423_015/9780439393423_015_xlg.jpg"},
+    {word: "F" , audio: "https://media.merriam-webster.com/soundc11/f/f0000001.wav", img_url: "https://teachables.scholastic.com/content/dam/scholastic/teachables/products/23/9780439393423_016/9780439393423_016_xlg.jpg"},
+    {word: "G" , audio: "https://media.merriam-webster.com/soundc11/g/g0000001.wav", img_url: "https://teachables.scholastic.com/content/dam/scholastic/teachables/products/23/9780439393423_017/9780439393423_017_xlg.jpg"},
+    {word: "H" , audio: "https://media.merriam-webster.com/soundc11/h/h0000001.wav", img_url: "https://teachables.scholastic.com/content/dam/scholastic/teachables/products/23/9780439393423_018/9780439393423_018_xlg.jpg"}
+]
+
+animals = [
+{word:"Elephant", audio:"https://media.merriam-webster.com/soundc11/e/elepha01.wav", img_url:"https://i.dlpng.com/static/png/1184700-elephant-tattoo-splitprimary-elephant-png-hd-outline-elephant-png-781_747_preview.png"},
+{word:"Kangaroo", audio:"https://media.merriam-webster.com/soundc11/k/kangar01.wav", img_url:"https://pngimg.com/uploads/kangaroo/kangaroo_PNG13.png"},
+{word:"Lion", audio:"https://media.merriam-webster.com/soundc11/l/lion0001.wav", img_url:"https://pngimg.com/uploads/lion/lion_PNG23262.png"},
+{word:"Ostrich", audio:"https://media.merriam-webster.com/soundc11/o/ostric01.wav", img_url:"https://pngimg.com/uploads/ostrich/ostrich_PNG76962.png"},
+{word:"Panda", audio:"https://media.merriam-webster.com/soundc11/p/panda001.wav", img_url:"https://pngimg.com/uploads/panda/panda_PNG8.png"}, 
+{word:"Zebra", audio:"https://media.merriam-webster.com/soundc11/z/zebra001.wav", img_url:"https://cdn.imgbin.com/22/9/3/imgbin-african-zebra-hq9BRUt3GssJWmqraJHq3Awqe.jpg"}
 ]
 
 fruits.each do |fruit|
@@ -54,17 +75,6 @@ fruits.each do |fruit|
     )
 end
 
-alphabet = [
-    {word: "A" , audio: "https://media.merriam-webster.com/soundc11/a/a0000001.wav", img_url: "https://teachables.scholastic.com/content/dam/scholastic/teachables/products/23/9780439393423_011/9780439393423_011_xlg.jpg"},
-    {word: "B" , audio: "https://media.merriam-webster.com/soundc11/b/b0000001.wav", img_url: "https://teachables.scholastic.com/content/dam/scholastic/teachables/products/23/9780439393423_012/9780439393423_012_xlg.jpg"},
-    {word: "C" , audio: "https://media.merriam-webster.com/soundc11/c/c0000001.wav", img_url: "https://teachables.scholastic.com/content/dam/scholastic/teachables/products/23/9780439393423_013/9780439393423_013_xlg.jpg"},
-    {word: "D" , audio: "https://media.merriam-webster.com/soundc11/d/d0000001.wav", img_url: "https://teachables.scholastic.com/content/dam/scholastic/teachables/products/23/9780439393423_014/9780439393423_014_xlg.jpg"},
-    {word: "E" , audio: "https://media.merriam-webster.com/soundc11/e/e0000001.wav", img_url: "https://teachables.scholastic.com/content/dam/scholastic/teachables/products/23/9780439393423_015/9780439393423_015_xlg.jpg"},
-    {word: "F" , audio: "https://media.merriam-webster.com/soundc11/f/f0000001.wav", img_url: "https://teachables.scholastic.com/content/dam/scholastic/teachables/products/23/9780439393423_016/9780439393423_016_xlg.jpg"},
-    {word: "G" , audio: "https://media.merriam-webster.com/soundc11/g/g0000001.wav", img_url: "https://teachables.scholastic.com/content/dam/scholastic/teachables/products/23/9780439393423_017/9780439393423_017_xlg.jpg"},
-    {word: "H" , audio: "https://media.merriam-webster.com/soundc11/h/h0000001.wav", img_url: "https://teachables.scholastic.com/content/dam/scholastic/teachables/products/23/9780439393423_018/9780439393423_018_xlg.jpg"}
-]
-
 alphabet.each do |word|
     FlashCard.create(
         lesson_id: l2.id,
@@ -87,3 +97,27 @@ alphabet.each do |word|
         img_url: word[:img_url]
     )
 end
+
+animals.each do |word|
+    FlashCard.create(
+        lesson_id: l3.id,
+        word: word[:word],
+        audio: word[:audio],
+        img_url: word[:img_url]
+    )
+end
+
+animals.each do |word|
+    WordCard.create(
+        game_id: g3.id,
+        word: word[:word]
+    )
+end
+
+animals.each do |word|
+    ImgCard.create(
+        word_card_id: WordCard.find_by(word: word[:word]).id,
+        img_url: word[:img_url]
+    )
+end
+

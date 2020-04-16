@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :languages
   resources :img_cards
   resources :word_cards
-  resources :progress_trails
+  resources :trails
   resources :flash_cards
   resources :games
   resources :lessons

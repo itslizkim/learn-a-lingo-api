@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2020_04_06_230344) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "progress_trails", force: :cascade do |t|
+  create_table "trails", force: :cascade do |t|
     t.integer "user_id"
     t.integer "language_id"
     t.datetime "created_at", precision: 6, null: false
