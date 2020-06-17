@@ -5,7 +5,7 @@ class TrailsController < ApplicationController
     end
 
     def show
-        trail = Trail.find_by(params[:user_id])
+        trail = Trail.find_by(params[:user])
     end
 
     def create
@@ -16,6 +16,6 @@ class TrailsController < ApplicationController
     private
 
     def trail_params
-        params.permit(:user_id, :language_id)
+        params.permit(:user, :language)
     end
 end
