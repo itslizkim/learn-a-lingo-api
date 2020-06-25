@@ -14,9 +14,9 @@ lang2 = Language.create(language: "Korean")
 
 t1 = Trail.create(user_id: u1.id, language_id: lang1.id)
 
-l1 = Lesson.create(language_id: lang1.id, name: "Fruits", img_url: "https://blog.bariatriceating.com/wp-content/uploads/2015/09/Dollarphotoclub_78097722-1024x693.jpg")
-l2 = Lesson.create(language_id: lang1.id, name: "Alphabet", img_url: "https://www.wowwallpaperhanging.com.au/wp-content/uploads/2013/04/Brewers_Wallapper_-_Cheek_Monkeys_-_Alphabet.png?x33484")
-l3 = Lesson.create(language_id: lang1.id, name:"Animals", img_url: "https://i.pinimg.com/originals/b9/a6/30/b9a6305ff831529bea9bb15a4e393fa0.jpg")
+l1 = Lesson.create(language_id: lang1.id, name: "fruits", img_url: "https://blog.bariatriceating.com/wp-content/uploads/2015/09/Dollarphotoclub_78097722-1024x693.jpg")
+l2 = Lesson.create(language_id: lang1.id, name: "alphabet", img_url: "https://www.wowwallpaperhanging.com.au/wp-content/uploads/2013/04/Brewers_Wallapper_-_Cheek_Monkeys_-_Alphabet.png?x33484")
+l3 = Lesson.create(language_id: lang1.id, name: "animals", img_url: "https://i.pinimg.com/originals/b9/a6/30/b9a6305ff831529bea9bb15a4e393fa0.jpg")
 
 g1 = Game.create(lesson_id: l1.id)
 g2 = Game.create(lesson_id: l2.id)
@@ -44,7 +44,7 @@ alphabet = [
 ]
 
 animals = [
-{word:"Elephant", audio:"https://media.merriam-webster.com/soundc11/e/elepha01.wav", img_url:"https://i.dlpng.com/static/png/1184700-elephant-tattoo-splitprimary-elephant-png-hd-outline-elephant-png-781_747_preview.png"},
+{word:"Elephant", audio:"https://media.merriam-webster.com/soundc11/e/elepha01.wav", img_url:"https://www.vhv.rs/file/max/21/213954_elephant-png.png"},
 {word:"Kangaroo", audio:"https://media.merriam-webster.com/soundc11/k/kangar01.wav", img_url:"https://pngimg.com/uploads/kangaroo/kangaroo_PNG13.png"},
 {word:"Lion", audio:"https://media.merriam-webster.com/soundc11/l/lion0001.wav", img_url:"https://pngimg.com/uploads/lion/lion_PNG23262.png"},
 {word:"Ostrich", audio:"https://media.merriam-webster.com/soundc11/o/ostric01.wav", img_url:"https://pngimg.com/uploads/ostrich/ostrich_PNG76962.png"},

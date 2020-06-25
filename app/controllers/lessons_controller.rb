@@ -5,7 +5,14 @@ class LessonsController < ApplicationController
     end
 
     def show
-        lesson = Lesson.find_by(params[:language])
+        # byebug
+        lesson = Lesson.find_by(name: params[:id])
         render json: lesson
+    end
+
+    private
+
+    def lesson_params
+        params.requirepermit(:name)
     end
 end

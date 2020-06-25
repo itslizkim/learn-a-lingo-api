@@ -6,7 +6,7 @@ class FlashCardsController < ApplicationController
     end
 
     def show
-        flashcard = FlashCard.(params[:lesson])
+        flashcard = FlashCard.find_by(params[:lesson_id])
         render json: flashcard
     end
 
