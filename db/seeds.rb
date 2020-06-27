@@ -44,12 +44,12 @@ alphabet = [
 ]
 
 animals = [
-{word:"Elephant", audio:"https://media.merriam-webster.com/soundc11/e/elepha01.wav", img_url:"https://www.vhv.rs/file/max/21/213954_elephant-png.png"},
+{word:"Elephant", audio:"https://media.merriam-webster.com/soundc11/e/elepha01.wav", img_url:"https://i.pinimg.com/originals/06/74/c5/0674c5e9defc6a949acf4f96f7818b27.png"},
 {word:"Kangaroo", audio:"https://media.merriam-webster.com/soundc11/k/kangar01.wav", img_url:"https://pngimg.com/uploads/kangaroo/kangaroo_PNG13.png"},
 {word:"Lion", audio:"https://media.merriam-webster.com/soundc11/l/lion0001.wav", img_url:"https://pngimg.com/uploads/lion/lion_PNG23262.png"},
 {word:"Ostrich", audio:"https://media.merriam-webster.com/soundc11/o/ostric01.wav", img_url:"https://pngimg.com/uploads/ostrich/ostrich_PNG76962.png"},
 {word:"Panda", audio:"https://media.merriam-webster.com/soundc11/p/panda001.wav", img_url:"https://pngimg.com/uploads/panda/panda_PNG8.png"}, 
-{word:"Zebra", audio:"https://media.merriam-webster.com/soundc11/z/zebra001.wav", img_url:"https://cdn.imgbin.com/22/9/3/imgbin-african-zebra-hq9BRUt3GssJWmqraJHq3Awqe.jpg"}
+{word:"Zebra", audio:"https://media.merriam-webster.com/soundc11/z/zebra001.wav", img_url:"https://pngimg.com/uploads/zebra/zebra_PNG8965.png"}
 ]
 
 fruits.each do |fruit|
